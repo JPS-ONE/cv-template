@@ -38,6 +38,16 @@ function renderCV(data) {
         li.textContent = hab;
         habilidadesList.appendChild(li);
     });
+
+    applyCustomStyles(data.styles);
+}
+
+function applyCustomStyles(styles) {
+    if (styles) {
+        document.documentElement.style.setProperty('--font-size-p', styles.fontSizeP + 'px');
+        document.documentElement.style.setProperty('--font-size-h1', styles.fontSizeH1 + 'px');
+        document.documentElement.style.setProperty('--font-size-h2', styles.fontSizeH2 + 'px');
+    }
 }
 
 function showForm() {
@@ -68,6 +78,12 @@ function showForm() {
     cvData.habilidades.forEach((hab, index) => {
         addHabilidadInput(hab, index);
     });
+
+    if (cvData.styles) {
+        document.getElementById('font-size-p').value = cvData.styles.fontSizeP;
+        document.getElementById('font-size-h1').value = cvData.styles.fontSizeH1;
+        document.getElementById('font-size-h2').value = cvData.styles.fontSizeH2;
+    }
 }
 
 function addExperienciaInput(exp = {}, index) {
@@ -77,7 +93,8 @@ function addExperienciaInput(exp = {}, index) {
         <input type="text" name="experiencia[${index}][empresa]" placeholder="Empresa" value="${exp.empresa || ''}" required>
         <input type="text" name="experiencia[${index}][periodo]" placeholder="Periodo" value="${exp.periodo || ''}" required>
         <textarea name="experiencia[${index}][descripcion]" placeholder="Descripción" required>${exp.descripcion || ''}</textarea>
-    `;
+        <hr>
+        `;
     document.getElementById('experiencia-inputs').appendChild(div);
 }
 
@@ -87,7 +104,8 @@ function addEducacionInput(edu = {}, index) {
         <input type="text" name="educacion[${index}][titulo]" placeholder="Título" value="${edu.titulo || ''}" required>
         <input type="text" name="educacion[${index}][institucion]" placeholder="Institución" value="${edu.institucion || ''}" required>
         <input type="text" name="educacion[${index}][año]" placeholder="Año" value="${edu.año || ''}" required>
-    `;
+        <hr>
+        `;
     document.getElementById('educacion-inputs').appendChild(div);
 }
 
@@ -108,7 +126,12 @@ function saveCV(event) {
         telefono: formData.get('telefono'),
         experiencia: [],
         educacion: [],
-        habilidades: formData.getAll('habilidades[]')
+        habilidades: formData.getAll('habilidades[]'),
+        styles: {
+            fontSizeP: parseInt(formData.get('font-size-p')),
+            fontSizeH1: parseInt(formData.get('font-size-h1')),
+            fontSizeH2: parseInt(formData.get('font-size-h2'))
+        }
     };
 
     const experienciaInputs = document.querySelectorAll('#experiencia-inputs > div');
@@ -148,7 +171,6 @@ function saveCV(event) {
         hideForm();
     }
 
-    // En un escenario real, aquí enviarías los datos al servidor para guardarlos
     console.log('Datos del CV actualizados:', cvData);
 }
 
@@ -174,8 +196,8 @@ document.addEventListener('DOMContentLoaded', () => {
     loadCV();
     document.getElementById('edit-btn').addEventListener('click', showForm);
     document.getElementById('cv-form').addEventListener('submit', saveCV);
-    document.getElementById('add-experiencia').addEventListener('click', () => addExperienciaInput());
-    document.getElementById('add-educacion').addEventListener('click', () => addEducacionInput());
-    document.getElementById('add-habilidad').addEventListener('click', () => addHabilidadInput());
+    document.getElementById('add-experiencia').addEventListener('click', () => addExperienciaInput({}, document.querySelectorAll('#experiencia-inputs > div').length));
+    document.getElementById('add-educacion').addEventListener('click', () => addEducacionInput({}, document.querySelectorAll('#educacion-inputs > div').length));
+    document.getElementById('add-habilidad').addEventListener('click', () => addHabilidadInput('', document.querySelectorAll('#habilidades-inputs > div').length));
     document.getElementById('foto-input').addEventListener('change', handleFotoInput);
 });

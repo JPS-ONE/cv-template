@@ -15,6 +15,11 @@
     --neutral-medium: #CCCCCC;
     --orange: #D16014;
     --orange-light: #E8985E;
+
+    --font-size-p: 12px;
+    --font-size-h1: 24px;
+    --font-size-h2: 16px;
+
   }
 body {
     display: flex;
@@ -58,26 +63,46 @@ body {
 h1 {
     color: var(--primary-light);
     font-family: "Monda", sans-serif;
-    font-size: 20px;
+    font-size: var(--font-size-h1);
 }
 
 h2 {
     color: var(--primary-light);
     font-family: "Monda", sans-serif;
-    font-size: 16px;
+    font-size: var(--font-size-h2);
 }
 
 p{
     color: #A4BF9D;
     font-family: "Maitree", serif;
     text-decoration: underline;
-    font-size: 14px;
+    font-size: var(--font-size-p);
 }
 
 ul{
     font-family: "Maitree", serif;
     font-size: 12px;
 
+}
+
+input{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: var(--neutral-dark);
+}
+
+input[type="number"] {
+    width: 10%; /* Ancho completo */
+    padding: 10px; /* Espaciado interno */
+    margin-bottom: 20px; /* Espaciado inferior */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: border-color 0.3s; /* Transición suave para el borde */
+}
+
+input[type="number"]:focus {
+    border-color: #4A90E2; /* Cambia el color del borde al enfocar */
+    outline: none; /* Quitar el contorno predeterminado */
 }
 
 .section {

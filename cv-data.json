@@ -16,17 +16,7 @@
             "titulo": "Grado en Ingeniería Informática",
             "institucion": "Universidad de Ejemplo",
             "año": "2016"
-        },
-        {
-            "titulo": "Grado en Ingeniería Informática",
-            "institucion": "Universidad de Ejemplo",
-            "año": "2016"
-        },
-        {
-            "titulo": "Grado en Ingeniería Informática",
-            "institucion": "Universidad de Ejemplo",
-            "año": "2016"
         }
     ],
-    "habilidades": ["HTML", "CSS", "JavaScript", "React", "Node.js"]
+    "habilidades": ["HTML", "CSS", "JavaScript", "React", "Node.js", "React"]
 }

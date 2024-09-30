@@ -38,6 +38,16 @@
         <div id="form-container" style="display: none;">
             <h2>Editar CV</h2>
             <form id="cv-form">
+                <h3>Personalización</h3>
+                <label for="font-size-p">Tamaño de fuente para los párrafos (px):</label>
+                <input type="number" id="font-size-p" name="font-size-p" min="10" max="24" value="16">
+
+                <label for="font-size-h1">Tamaño de fuente para el nombre (px):</label>
+                <input type="number" id="font-size-h1" name="font-size-h1" min="20" max="48" value="32">
+
+                <label for="font-size-h2">Tamaño de fuente para los títulos (px):</label>
+                <input type="number" id="font-size-h2" name="font-size-h2" min="16" max="36" value="24">
+
                 <label for="foto-input">Foto de perfil:</label>
                 <input type="file" id="foto-input" name="foto" accept="image/*">
                 <img id="foto-preview" src="" alt="Vista previa de la foto" style="display: none; max-width: 200px; margin-top: 10px;">
@@ -50,19 +60,19 @@
 
                 <label for="telefono">Teléfono:</label>
                 <input type="tel" id="telefono-input" name="telefono" required>
-
+                <br>
                 <h3>Experiencia Laboral</h3>
                 <div id="experiencia-inputs"></div>
                 <button type="button" id="add-experiencia">Añadir Experiencia</button>
-
+                <br>
                 <h3>Educación</h3>
                 <div id="educacion-inputs"></div>
                 <button type="button" id="add-educacion">Añadir Educación</button>
-
+                <br>
                 <h3>Habilidades</h3>
                 <div id="habilidades-inputs"></div>
                 <button type="button" id="add-habilidad">Añadir Habilidad</button>
-
+                <br>
                 <button type="submit">Guardar CV</button>
             </form>
         </div>
