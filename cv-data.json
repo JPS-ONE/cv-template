@@ -1,0 +1,32 @@
+{
+    "foto": "avatar-de-usuario.png",
+    "nombre": "TU NOMBRE",
+    "email": "tuemail@ejemplo.com",
+    "telefono": "+34 123 456 789",
+    "experiencia": [
+        {
+            "puesto": "Desarrollador Web",
+            "empresa": "Empresa ABC",
+            "periodo": "2018 - Presente",
+            "descripcion": "Desarrollo de aplicaciones web utilizando HTML, CSS y JavaScript."
+        }
+    ],
+    "educacion": [
+        {
+            "titulo": "Grado en Ingeniería Informática",
+            "institucion": "Universidad de Ejemplo",
+            "año": "2016"
+        },
+        {
+            "titulo": "Grado en Ingeniería Informática",
+            "institucion": "Universidad de Ejemplo",
+            "año": "2016"
+        },
+        {
+            "titulo": "Grado en Ingeniería Informática",
+            "institucion": "Universidad de Ejemplo",
+            "año": "2016"
+        }
+    ],
+    "habilidades": ["HTML", "CSS", "JavaScript", "React", "Node.js"]
+}

@@ -1,0 +1,118 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Monda:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Maitree:wght@200;300;400;500;600;700&display=swap');
+
+
+:root {
+    --primary-dark: #0C4854;
+    --primary-light: #A4BF9D;
+    --complementary-dark: #4C2719;
+    --complementary-light: #BFA4A4;
+    --accent-1: #0C3D48 ;
+    --accent-2: #89A78B;
+    --neutral-dark: #2D2D2D;
+    --neutral-light: #F5F5F5;
+    --neutral-medium: #CCCCCC;
+    --orange: #D16014;
+    --orange-light: #E8985E;
+  }
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    background-color: var(--accent-1);
+}
+
+.btn-container{
+    margin-bottom: 2rem;
+}
+
+.container {
+    width: 595px;
+    height: 842px ;
+    margin: 2rem;
+    background-color: var(--primary-dark);
+    padding: 30px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+    color: var(--complementary-light);
+}
+
+.header{
+    display: flex;
+    align-items: center;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin:0  60px 10px 10px;
+    filter: drop-shadow(4px 4px 4px var(--neutral-dark));}
+
+
+h1 {
+    color: var(--primary-light);
+    font-family: "Monda", sans-serif;
+    font-size: 20px;
+}
+
+h2 {
+    color: var(--primary-light);
+    font-family: "Monda", sans-serif;
+    font-size: 16px;
+}
+
+p{
+    color: #A4BF9D;
+    font-family: "Maitree", serif;
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+ul{
+    font-family: "Maitree", serif;
+    font-size: 12px;
+
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: var(--accent-2);
+    border: 2px solid var(--orange) ;
+    border-radius: 5px;
+    color: var(--neutral-light);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: var(--neutral-light);
+    box-shadow: rgba(0, 0, 0, 0.536) 0px 5px 15px;
+}
+
+
+label, input {
+    margin-bottom: 10px;
+}
+
+input[type="text"], input[type="email"], input[type="tel"] {
+    padding: 5px;
+    font-size: 16px;
+}
