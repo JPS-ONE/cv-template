@@ -93,6 +93,7 @@ function addExperienciaInput(exp = {}, index) {
         <input type="text" name="experiencia[${index}][empresa]" placeholder="Empresa" value="${exp.empresa || ''}" required>
         <input type="text" name="experiencia[${index}][periodo]" placeholder="Periodo" value="${exp.periodo || ''}" required>
         <textarea name="experiencia[${index}][descripcion]" placeholder="Descripción" required>${exp.descripcion || ''}</textarea>
+        <button class="delete-btn">Eliminar</button> 
         <hr>
         `;
     document.getElementById('experiencia-inputs').appendChild(div);
@@ -104,6 +105,7 @@ function addEducacionInput(edu = {}, index) {
         <input type="text" name="educacion[${index}][titulo]" placeholder="Título" value="${edu.titulo || ''}" required>
         <input type="text" name="educacion[${index}][institucion]" placeholder="Institución" value="${edu.institucion || ''}" required>
         <input type="text" name="educacion[${index}][año]" placeholder="Año" value="${edu.año || ''}" required>
+        <button class="delete-btn">Eliminar</button> 
         <hr>
         `;
     document.getElementById('educacion-inputs').appendChild(div);
@@ -113,7 +115,8 @@ function addHabilidadInput(hab = '', index) {
     const div = document.createElement('div');
     div.innerHTML = `
         <input type="text" name="habilidades[]" placeholder="Habilidad" value="${hab}" required>
-    `;
+        <button class="delete-btn">Eliminar</button> 
+        `;
     document.getElementById('habilidades-inputs').appendChild(div);
 }
 
@@ -191,6 +194,13 @@ function handleFotoInput(event) {
         reader.readAsDataURL(file);
     }
 }
+
+document.addEventListener('click', (event) => {
+    if (event.target.classList.contains('delete-btn')) {
+      const inputDiv = event.target.parentNode;
+      inputDiv.remove();
+    }
+  });
 
 document.addEventListener('DOMContentLoaded', () => {
     loadCV();
